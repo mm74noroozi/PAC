@@ -11,7 +11,13 @@ var FindProxyForURL = function(init, profiles) {
 }("+auto switch", {
     "+auto switch": function(url, host, scheme) {
         "use strict";
+        if (/(?:^|\.)quora\.com$/.test(host)) return "+proxy";
         if (/(?:^|\.)youtube\.com$/.test(host)) return "+proxy";
+        if (/(?:^|\.)doubleclick\.net$/.test(host)) return "+proxy";
+        if (/(?:^|\.)jnn-pa\.googleapis\.com$/.test(host)) return "+proxy";
+        if (/(?:^|\.)ggpht\.com$/.test(host)) return "+proxy";
+        if (/(?:^|\.)googlevideo\.com$/.test(host)) return "+proxy";
+        if (/(?:^|\.)ytimg\.com$/.test(host)) return "+proxy";
         if (/(?:^|\.)deezer\.com$/.test(host)) return "+proxy";
         if (/(?:^|\.)softpedia\.com$/.test(host)) return "+proxy";
         if (/(?:^|\.)upwork\.com$/.test(host)) return "+proxy";
@@ -20,6 +26,9 @@ var FindProxyForURL = function(init, profiles) {
         if (/firebase\.google\.com$/.test(host)) return "+proxy";
         if (/(?:^|\.)similarweb\.com$/.test(host)) return "+proxy";
         if (/(?:^|\.)hackerrank\.com$/.test(host)) return "+proxy";
+        if (/(?:^|\.)ansible\.com$/.test(host)) return "+proxy";
+        if (/(?:^|\.)telegram\.org$/.test(host)) return "+proxy";
+        if (/(?:^|\.)nerh\.ir$/.test(host)) return "+proxy";
         return "DIRECT";
     },
     "+proxy": function(url, host, scheme) {
